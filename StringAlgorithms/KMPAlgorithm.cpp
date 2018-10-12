@@ -83,3 +83,9 @@ int main()
 	KMPSearch(pat, txt); 
 	return 0; 
 } 
+
+/**Resources-
+1.https://www.youtube.com/watch?v=GTJr8OvyEVQ&t=691s
+2.https://www.youtube.com/watch?v=GTJr8OvyEVQ&t=691s
+3.https://www.geeksforgeeks.org/kmp-algorithm-for-pattern-searching/
+4.https://www.youtube.com/watch?v=V5-7GzOfADQ
