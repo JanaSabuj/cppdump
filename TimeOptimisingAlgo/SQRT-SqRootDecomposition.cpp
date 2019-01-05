@@ -76,7 +76,7 @@ int main()
 
 	preprocess(input, n); 
 
-	cout << "query(3,8) : " << query(3, 8) << endl; 
+	cout << "query(3,8) : " << query(3, 8) << endl; // 0-based array;prints sum of elements from index 3 to index 8, both inclusive
 	cout << "query(1,6) : " << query(1, 6) << endl; 
 	update(8, 0); 
 	cout << "query(8,8) : " << query(8, 8) << endl; 

@@ -80,7 +80,7 @@ int main()
     string txt,pat;
          txt  = "ABACABAB"; 
 	     pat  = "AB"; 
-	KMPSearch(pat, txt); 
+	KMPSearch(pat, txt); // 0 4 6
 	return 0; 
 } 
 
