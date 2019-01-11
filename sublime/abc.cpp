@@ -5,14 +5,20 @@ void fileio()
 {
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
+	freopen("error.txt", "w", stderr);
 }
 
 
 int main() {
 
-	fileio();
+	fileio();// only if I/O is to be provided
 
-	 cout<<"GFG"<<endl;int x; cin>>x; cout<<x*x<<endl;
+	// Checking if the setup is working
+	 int t;cin>>t;cout<<"Hello :" << t;
+	 cerr<<"Hello :"<< t*2;
+	// End of checking engine 
+
+
 
 	return 0;
 
