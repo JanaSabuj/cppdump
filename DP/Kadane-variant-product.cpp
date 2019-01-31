@@ -12,7 +12,7 @@ int kadane(int arr[], int n){
 
         else if(arr[i]==0){
             minval=1; 
-            maxval=1;
+            maxval=0;
         }
         else if(arr[i]<0){
             prevMax=maxval;
