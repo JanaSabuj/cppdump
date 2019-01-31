@@ -6,3 +6,7 @@ This repo contains standard algorithms and DS to be inherited in CP contests
 
 # TimeOptimisingAlgo
 - SQRT Decompositon
+
+# Dp
+- Kadane's Algorithm(Sum)
+- Kadane's-variant(Product)
