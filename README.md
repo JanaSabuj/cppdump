@@ -13,3 +13,6 @@ This repo contains standard algorithms and DS to be inherited in CP contests
 
 # DS
 - Segment Tree(basic)
+
+# MISC
+- 2Pointers
