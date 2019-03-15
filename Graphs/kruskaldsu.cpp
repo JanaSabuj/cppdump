@@ -1,4 +1,4 @@
-//Built by Sabuj Jana(greenindia) from Jadavpur University,Kolkata,India
+ //Built by Sabuj Jana(greenindia) from Jadavpur University,Kolkata,India
 //God is Great
 #include <bits/stdc++.h>
 using namespace std;
@@ -16,6 +16,7 @@ int id[MAX], nodes, edges;
 int mincost;
 pair< int, pair<int, int>> p[MAX];
 vector<pair<int, int>> mst;
+int size[MAX];
 
 //initialize
 void initialize() {
@@ -24,6 +25,7 @@ void initialize() {
 	{
 		/* code */
 		id[i] = i;
+		size[i]=1;
 	}
 }
 
@@ -43,7 +45,15 @@ void union1(int x, int y) {
 
 	int p = root(x);
 	int q = root(y);
-	id[p] = id[q];
+	// id[p] = id[q];
+	if( size[p]<size[q]){
+		id[p]=id[q];
+		size[q]+=size[p];
+	}
+	else {
+		id[q]=id[p];
+		size[p]+=size[q];
+	}
 }
 
 //kruskal
@@ -71,13 +81,15 @@ int kruskal(pair< int, pair<int, int>> p[]) {
 }
 
 signed main() {
-	freopen("input.txt", "r", stdin);
-	freopen("output.txt", "w", stdout);
-	freopen("error.txt", "w", stderr);
+	// freopen("input.txt", "r", stdin);
+	// freopen("output.txt", "w", stdout);
+	// freopen("error.txt", "w", stderr);
 	crap;
 
 	//clearing the global mst vector
 	mst.clear();
+	// size.clear();
+	memset(size,0,sizeof(size));
 
 	// take the entire input of graph
 	cin >> nodes >> edges;
@@ -106,4 +118,3 @@ signed main() {
 	return 0;
 
 }
-
