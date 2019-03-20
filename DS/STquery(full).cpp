@@ -88,7 +88,7 @@ signed main() {
 		cin >> arr[i];
 	}
 
-	int tree[2 * n];
+	int tree[4 * n];
 
 	//buildtree karke le aaa
 	bt(arr, tree, 0, n - 1, 1);
