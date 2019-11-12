@@ -13,6 +13,7 @@ int power(int a, int b){
 
 int power(int a, int b, int m){
 	int ans=1;
+	a=a%m;
 	while(b){
 		if(b&1)
 			ans=(ans*a)%m;
