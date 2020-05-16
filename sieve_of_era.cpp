@@ -1,10 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// sieve start
 const int N = 1e6 + 7;
 vector<int> primes;
 bool composite[N];// {0} initially all prime
+
 // O(N loglogN)
 void sieve() {
 	for (int i = 2; i <= sqrt(N); i++) {
@@ -14,14 +14,10 @@ void sieve() {
 			composite[j] = 1;
 	}
 }
-// sieve end
 
 int main() {
-
 	sieve();
-
 	for (auto x : primes)
 		cout << x << " ";
-
 	return 0;
 }
