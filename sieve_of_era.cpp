@@ -7,7 +7,8 @@ bool composite[N];// {0} initially all prime
 
 // O(N loglogN)
 void sieve() {
-	for (int i = 2; i <= sqrt(N); i++) {
+	for (int i = 2; i <= (N); i++) {
+		// till N or sqrt(N) doesnt matter. Almost same complexity of O(NloglogN)
 		if (composite[i]) continue;
 		primes.push_back(i);// prime
 		for (int j = i * i; j <= N; j += i)
