@@ -11,8 +11,8 @@ void sieve() {
 		// till N or sqrt(N) doesnt matter. Almost same complexity of O(NloglogN)
 		if (composite[i]) continue;
 		primes.push_back(i);// prime
-		for (int j = i * i; j <= N; j += i)
-			composite[j] = 1;
+		for (int j = 2 * i; j <= N; j += i)
+			composite[j] = 1;// multiple of prime
 	}
 }
 
