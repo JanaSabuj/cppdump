@@ -17,6 +17,18 @@ int main() {
 	cout << upper_bound(arr.begin(), arr.end(), 40) - arr.begin() << endl;// 7
 	cout << upper_bound(arr.begin(), arr.end(), 0) - arr.begin() << endl;// 0
 	cout << upper_bound(arr.begin(), arr.end(), 55) - arr.begin() << endl;// 8
+	
+	if(binary_search(arr.begin(), arr.end(), 40))
+		cout << "YES";// yes
+	else
+		cout << "NO";
+		
+	if(binary_search(arr.begin(), arr.end(), 41))
+		cout << "YES";
+	else
+		cout << "NO";// no
+	
+	
  
 	return 0;
 }
