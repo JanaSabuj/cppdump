@@ -10,7 +10,7 @@ bool composite[N];// {0} initially all prime
 
 // in range [0..N], which are prime and which are non-prime?
 // give all the primes in this range?
-// prime factorise any number in this range?
+// get the distinct prime factors any number in this range?
 
 // O(N loglogN)
 void sieve() {
