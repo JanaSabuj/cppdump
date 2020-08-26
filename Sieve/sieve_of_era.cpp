@@ -8,6 +8,10 @@ vi primes;
 vvi pfs(N);// pfs[i] contains all pfs of i
 bool composite[N];// {0} initially all prime
 
+// in range [0..N], which are prime and which are non-prime?
+// give all the primes in this range?
+// prime factorise any number in this range?
+
 // O(N loglogN)
 void sieve() {
 	for (int i = 2; i <= (N); i++) {
