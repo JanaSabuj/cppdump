@@ -51,3 +51,66 @@ signed main() {
 	solve();
 	return 0;
 }
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+const int N = 3e5 + 5;
+const int MOD = 1e9 + 7;
+int fact[N], invfact[N];
+
+int binpow(int a, int b, int m) {
+	// a^b % m
+	int res = 1;
+	while (b) {
+		if (b & 1)
+			res = res * a % m;
+		a = a * a % m;
+		b /= 2;
+	}
+
+	return res;
+}
+
+int modinv(int x) {
+	return binpow(x, MOD - 2, MOD);
+}
+
+void precompute() {
+
+	fact[0] = fact[1] = 1;
+	for (int i = 2; i <= N; i++) {
+		fact[i] = fact[i - 1] * i;
+		fact[i] %= MOD;
+	}
+
+	invfact[N - 1] = modinv(fact[N - 1]);
+	for (int i = N - 2; i >= 0; i--) {
+		invfact[i] = invfact[i + 1] * (i + 1);
+		invfact[i] %= MOD;
+	}
+}
+
+int nCr(int x, int y) {
+	if (y > x)
+		return 0;
+
+	int num = fact[x];
+	num %= MOD;
+	num *= invfact[y];
+	num %= MOD;
+	num *= invfact[x - y];
+	num %= MOD;
+
+	return num;
+}
+
+signed main() {
+#ifndef ONLINE_JUDGE
+	freopen("input.txt", "r", stdin);
+	freopen("error.txt", "w", stderr);
+#endif
+	crap;
+
+	precompute();
+	cout << nCr(15, 10);
+
+	return 0;
+}
