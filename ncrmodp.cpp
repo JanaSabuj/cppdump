@@ -5,7 +5,7 @@ int fac[lim];
 void preprocess() {
 	fac[0] = 1;
 
-	for (int i = 1; i <= lim; ++i) {
+	for (int i = 1; i < lim; ++i) {
 		fac[i] = (fac[i - 1] * i) % p;
 	}
 }
@@ -32,7 +32,7 @@ int ncrmodp(int n, int r, int p) {
 	//-------- mod p
 	//r!(n-r)!
 
-	return (fac[n] * inverse(fac[r], p) * inverse(fac[n - r], p)) % p;
+	return ( (fac[n] * inverse(fac[r], p)) % p * inverse(fac[n - r], p)) % p;
 }
 
 void solve() {
