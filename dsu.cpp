@@ -1,11 +1,11 @@
 // DSU with path compression and union by size
 const int N = 1e5 + 7;
 vector<int> parent(N);
-vector<int> size(N);
+vector<int> sz(N);
 
 void make_set(int v) {
     parent[v] = v;
-    size[v] = 1;
+    sz[v] = 1;
 }
 
 int find_set(int v) {
@@ -18,9 +18,9 @@ void union_sets(int a, int b) {
     a = find_set(a);
     b = find_set(b);
     if (a != b) {
-        if (size[a] < size[b])
+        if (sz[a] < sz[b])
             swap(a, b);
         parent[b] = a;
-        size[a] += size[b];
+        sz[a] += sz[b];
     }
 }
