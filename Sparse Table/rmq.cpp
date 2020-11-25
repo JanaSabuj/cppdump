@@ -33,6 +33,13 @@ int query(int l, int r){
     return ans;    
 }
 
+
+int rmq(int L, int R) {
+	int j = log2(R - L + 1);
+	return min(sparse[L][j], sparse[R - (1 << j) + 1][j]);
+}
+
+
 int main() {
                     // 0  1  2  3  4  5  6
     vector<int> arr = {2, 1, 5, 7, 8, 4, 5};
