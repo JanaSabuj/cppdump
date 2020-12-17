@@ -9,7 +9,7 @@ int binpow(int a, int b) {
     return res;
 }
 
-int binpow(int a, int b, int m) {
+int binpowmod(int a, int b, int m) {
     a %= m;
     int res = 1;
     while (b > 0) {
