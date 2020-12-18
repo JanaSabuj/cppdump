@@ -1,4 +1,4 @@
-const int maxn = 2e5 + 5;
+const int maxn = 2e6 + 5;
 const int mod = 1e9 + 7;
 int fac[maxn], invfac[maxn];
 
