@@ -1,3 +1,4 @@
+const int mod = 1e9 + 7;
 int addx(int a, int b) {
 	a += b;
 	if (a >= mod) a -= mod;
@@ -51,20 +52,27 @@ void solve() {
 	// An = A * P
 	int n;
 	cin >> n;
-	vvi A = {{1, 1}, {1, 0}};
-	vi P = {0, 1};
+	vvi A = {{1, 1, 1, 1, 1, 1},
+		{1, 0, 0, 0, 0, 0},
+		{0, 1, 0, 0, 0, 0},
+		{0, 0, 1, 0, 0, 0},
+		{0, 0, 0, 1, 0, 0},
+		{0, 0, 0, 0, 1, 0},
+	};
 
+	vi P = {1, 2, 4, 8, 16, 32};
 
-	if (n < 2)
-		cout << P[n] << endl;
+	if (n == 0)
+		cout << 1 << endl;
+	else if (n <= 6)
+		cout << P[n - 1] << endl;
 	else {
-
-		vvi t = matrix_expo(A, n - 1);
+		vvi t = matrix_expo(A, n - 6);
 		int ans = 0;
 		int cols = A[0].size();
 
 		for (int i = 0; i < cols; i++) {
-			ans = addx(ans , mulx(t[0][i] , P[2 - i - 1]));
+			ans = addx(ans , mulx(t[0][i] , P[6 - i - 1]));
 		}
 		cout << ans << endl;
 	}
