@@ -32,3 +32,7 @@ https://acm.timus.ru/problem.aspx?space=1&num=1671
 https://www.spoj.com/problems/CLFLARR/
 // In this problem, par[i] pts to the rightmost idx which must be colored by avoiding all already colored indxs.
 // union(idx, idx + 1) concept
+
+// To calculate the total no of ways to select 2 nodes fron N nodes, one from each CC, such that there is no path b/w them
+// WAYS = NC2 - sum(S[i]C2) [i = 1 to k] 
+// k connected components
