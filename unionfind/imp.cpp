@@ -27,3 +27,8 @@ https://acm.timus.ru/problem.aspx?space=1&num=1671
 // 4. Timus - PARITY
 // if parity of 1s in [l, r] is even, => parity [l-1] = [r] and ![l - 1] = ![r]
 // if parity of 1s in [l. r] is odd, => parity [l - 1] = ![r] and [l - 1] = ![r]
+
+
+https://www.spoj.com/problems/CLFLARR/
+// In this problem, par[i] pts to the rightmost idx which must be colored by avoiding all already colored indxs.
+// union(idx, idx + 1) concept
