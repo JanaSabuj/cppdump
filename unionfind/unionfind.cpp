@@ -1,6 +1,6 @@
 const int N = 1e5;
-int parent[N];
-int _size[N];
+vi parent;
+vi _size;
 
 void make_set(int v) {
 	parent[v] = v;
@@ -27,6 +27,13 @@ void union_sets(int a, int b) {
 	}
 }
 
+void _init(int n){
+	parent.assign(n, 0);
+	_size.assign(n, 0);
+	
+	for(int i = 0; i < n; i++)
+		make_set(i);
+}
 
 // int find_set(int v) {
 // 	if (v == parent[v])
