@@ -1,6 +1,10 @@
+const int N = 1e5;
+int parent[N];
+int _size[N];
+
 void make_set(int v) {
 	parent[v] = v;
-	size[v] = 1;
+	_size[v] = 1;
 }
 
 // Path compression - O(log N)
@@ -10,16 +14,16 @@ int find_set(int v) {
 	return parent[v] = find_set(parent[v]);
 }
 
-// Union by Size -
+// Union by Size - O(alphaN)
 // a big, b small
 void union_sets(int a, int b) {
 	a = find_set(a);
 	b = find_set(b);
 	if (a != b) {
-		if (size[a] < size[b])
+		if (_size[a] < _size[b])
 			swap(a, b);
 		parent[b] = a;
-		size[a] += size[b];
+		_size[a] += _size[b];
 	}
 }
 
