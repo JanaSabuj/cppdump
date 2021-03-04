@@ -1,3 +1,4 @@
+https://codeforces.com/contest/25/problem/D
 //1. Make a edge b/w 2 nodes iff they are NOT in the same CC
 // a  ----  b
 if (find_set(a) != find_set(b))
@@ -18,4 +19,8 @@ for (int i = 2; i <= n; ++i) {
       cc++;
 		}
 }
+
+https://acm.timus.ru/problem.aspx?space=1&num=1671
+//3. To print the no of CCs after every deletion of an edge, first construct DSU for all 
+// edges that will never be deleted. Then process the deleted edges in the reverse order, print the CCs and union that edge's nodes
 
