@@ -24,3 +24,6 @@ https://acm.timus.ru/problem.aspx?space=1&num=1671
 //3. To print the no of CCs after every deletion of an edge, first construct DSU for all 
 // edges that will never be deleted. Then process the deleted edges in the reverse order, print the CCs and union that edge's nodes
 
+// 4. Timus - PARITY
+// if parity of 1s in [l, r] is even, => parity [l-1] = [r] and ![l - 1] = ![r]
+// if parity of 1s in [l. r] is odd, => parity [l - 1] = ![r] and [l - 1] = ![r]
