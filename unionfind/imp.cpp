@@ -42,3 +42,7 @@ Same concept as Q3. First apply the #s on the string, then make the dsu tree
 After that, process all queries in reverse order and undo changes as you go on.
 	
 	
+https://toph.co/p/unbelievable-array
+simple dsu
+1 x y => x -> y
+2 idx => find leader of a[idx]
