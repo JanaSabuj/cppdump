@@ -36,3 +36,9 @@ https://www.spoj.com/problems/CLFLARR/
 // To calculate the total no of ways to select 2 nodes fron N nodes, one from each CC, such that there is no path b/w them
 // WAYS = NC2 - sum(S[i]C2) [i = 1 to k] 
 // k connected components
+
+https://www.spoj.com/problems/CONSEC/
+Same concept as Q3. First apply the #s on the string, then make the dsu tree
+After that, process all queries in reverse order and undo changes as you go on.
+	
+	
