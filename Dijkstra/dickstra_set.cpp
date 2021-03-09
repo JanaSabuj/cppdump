@@ -29,3 +29,5 @@ void dijkstra(int src, int n) {
 		}
 	}
 }
+
+// Imp: Multiple paths b/w 2 nodes are also supported in the adj list for Dijkstra 
