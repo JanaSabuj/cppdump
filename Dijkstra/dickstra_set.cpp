@@ -23,9 +23,9 @@ void dijkstra(int src) {
 
 			if (dist[v] + len < dist[to]) {
 				q.erase({dist[to], to});
-				dist[to] = d[v] + len;
+				dist[to] = dist[v] + len;
 				par[to] = v;
-				q.insert({d[to], to});
+				q.insert({dist[to], to});
 			}
 		}
 	}
