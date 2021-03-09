@@ -3,10 +3,9 @@ vector<vector<pair<int, int>>> adj;// adj list for weighted graphs
 vector<int> dist;
 vector<int> par;
 
-void dijkstra(int src) {
-	int n = adj.size();
-	dist.assign(n, inf);
-	par.assign(n, -1);
+void dijkstra(int src, int n) {	
+	dist.assign(n + 1, inf);
+	par.assign(n + 1, -1);
 
 	dist[src] = 0;
 
