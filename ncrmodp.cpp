@@ -38,121 +38,39 @@ void preprocess() {
 	for (int i = maxn - 2; i >= 0; i--)
 		invfac[i] = mul(invfac[i + 1], i + 1);
 }
---------------------------------------------------------------------------------------------------------------------------------------------
-const int lim = 1e6;
-const int p = 1e9 + 7;
-int fac[lim];
+-----------------------------------------------------------
+	const int N = 1e5 + 7;
+const int mod = 1e9 + 7;
+int fac[N];
 
-void preprocess() {
+void prefac() {
 	fac[0] = 1;
-
-	for (int i = 1; i < lim; ++i) {
-		fac[i] = (fac[i - 1] * i) % p;
+	for (int i = 1; i < N; ++i) {
+		fac[i] = (fac[i - 1] * i) % mod;
 	}
 }
 
-int power(int a, int b, int m) {
-	a = a % m;
-	int ans = 1;
-	while (b) {
-		if (b & 1)
-			ans = (ans * a) % m;
-		a = (a * a) % m;
-		b /= 2;
-	}
-
-	return ans;
-}
-
-int inverse(int a, int p) {
-	return power(a, p - 2, p);
-}
-
-int ncrmodp(int n, int r, int p) {
-	// n!
-	//-------- mod p
-	//r!(n-r)!
-
-	return ( (fac[n] * inverse(fac[r], p)) % p * inverse(fac[n - r], p)) % p;
-}
-
-void solve() {
-	preprocess();
-
-	int n = 10, r = 2;
-	cout << ncrmodp(n, r, p) << endl;
-}
-
-signed main() {
-#ifndef ONLINE_JUDGE
-	freopen("input.txt", "r", stdin);
-	freopen("error.txt", "w", stderr);
-#endif
-	crap;
-	solve();
-	return 0;
-}
---------------------------------------------------------------------------------------------------------------------------------------------------------
-const int N = 3e5 + 5;
-const int MOD = 1e9 + 7;
-int fact[N], invfact[N];
-
-int binpow(int a, int b, int m) {
-	// a^b % m
+int power(int a, int b, int p) {
 	int res = 1;
+	a %= p;
 	while (b) {
 		if (b & 1)
-			res = res * a % m;
-		a = a * a % m;
+			res = res * a % p;
+		a = a * a % p;
 		b /= 2;
 	}
 
 	return res;
 }
 
-int modinv(int x) {
-	return binpow(x, MOD - 2, MOD);
+int invmodp(int a, int p) {
+	return power(a, p - 2, p);
 }
 
-void precompute() {
-
-	fact[0] = fact[1] = 1;
-	for (int i = 2; i <= N; i++) {
-		fact[i] = fact[i - 1] * i;
-		fact[i] %= MOD;
-	}
-
-	invfact[N - 1] = modinv(fact[N - 1]);
-	for (int i = N - 2; i >= 0; i--) {
-		invfact[i] = invfact[i + 1] * (i + 1);
-		invfact[i] %= MOD;
-	}
-}
-
-int nCr(int x, int y) {
-	if (y > x)
+int ncrmodp(int n, int r, int p) {
+	if (n < r)
 		return 0;
-
-	int num = fact[x];
-	num %= MOD;
-	num *= invfact[y];
-	num %= MOD;
-	num *= invfact[x - y];
-	num %= MOD;
-
-	return num;
+	if (r == 0)
+		return 1;
+	return ((fac[n] * invmodp(fac[r], p)) % p * invmodp(fac[n - r], p)) % p;
 }
-
-signed main() {
-#ifndef ONLINE_JUDGE
-	freopen("input.txt", "r", stdin);
-	freopen("error.txt", "w", stderr);
-#endif
-	crap;
-
-	precompute();
-	cout << nCr(15, 10);
-
-	return 0;
-}
--------------------------------------------------------------------------------------------------------------------------------------------------
